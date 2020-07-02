@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC7A0F7A24AE7DFB006FE11D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7A0F7924AE7DFB006FE11D /* AppDelegate.m */; };
+		FC7A0F8524AE7DFB006FE11D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC7A0F8424AE7DFB006FE11D /* Assets.xcassets */; };
+		FC7A0F8824AE7DFB006FE11D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC7A0F8624AE7DFB006FE11D /* LaunchScreen.storyboard */; };
+		FC7A0F8B24AE7DFB006FE11D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7A0F8A24AE7DFB006FE11D /* main.m */; };
+		FC7A0FAC24AE8079006FE11D /* ExtraCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7A0FAA24AE8078006FE11D /* ExtraCategories.m */; };
+		FC7A0FAF24AE80BC006FE11D /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7A0FAE24AE80BC006FE11D /* MainMenuViewController.m */; };
+		FC7A0FB524AE80EB006FE11D /* SDLInterfaceBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7A0FB124AE80EA006FE11D /* SDLInterfaceBridge.m */; };
+		FC7A0FB624AE80EB006FE11D /* RunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7A0FB224AE80EA006FE11D /* RunViewController.m */; };
+		FC7A0FB924AE821D006FE11D /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0F9F24AE7FAC006FE11D /* libSDL2.a */; };
+		FC7A0FC224AE821D006FE11D /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FBA24AE821D006FE11D /* GameController.framework */; };
+		FC7A0FC324AE821D006FE11D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FBB24AE821D006FE11D /* AVFoundation.framework */; };
+		FC7A0FC424AE821D006FE11D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FBC24AE821D006FE11D /* CoreGraphics.framework */; };
+		FC7A0FC524AE821E006FE11D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FBD24AE821D006FE11D /* CoreAudio.framework */; };
+		FC7A0FC624AE821E006FE11D /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FBE24AE821D006FE11D /* CoreMotion.framework */; };
+		FC7A0FC724AE821E006FE11D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FBF24AE821D006FE11D /* QuartzCore.framework */; };
+		FC7A0FC824AE821E006FE11D /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FC024AE821D006FE11D /* Metal.framework */; };
+		FC7A0FC924AE821E006FE11D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FC124AE821D006FE11D /* AudioToolbox.framework */; };
+		FC7A0FCC24AE82A8006FE11D /* stroke.bmp in Resources */ = {isa = PBXBuildFile; fileRef = FC7A0FCB24AE82A8006FE11D /* stroke.bmp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC7A0F9E24AE7FAC006FE11D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7A0F9224AE7FAC006FE11D /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FD6526630DE8FCCB002AD96B;
+			remoteInfo = "libSDL-iOS";
+		};
+		FC7A0FA024AE7FAC006FE11D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7A0F9224AE7FAC006FE11D /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 52ED1E5C222889500061FCE0;
+			remoteInfo = "libSDL-iOS-dylib";
+		};
+		FC7A0FA224AE7FAC006FE11D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7A0F9224AE7FAC006FE11D /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FAB598141BB5C1B100BE72C5;
+			remoteInfo = "libSDL-tvOS";
+		};
+		FC7A0FA424AE7FAC006FE11D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7A0F9224AE7FAC006FE11D /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3E3C7572241389A007D243C;
+			remoteInfo = "libSDL-tvOS-dylib";
+		};
+		FC7A0FA624AE7FAC006FE11D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7A0F9224AE7FAC006FE11D /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3E3C65222406928007D243C;
+			remoteInfo = "libSDLmain-iOS";
+		};
+		FC7A0FA824AE7FAC006FE11D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC7A0F9224AE7FAC006FE11D /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3E3C75F224138AE007D243C;
+			remoteInfo = "libSDLmain-tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC7A0F7524AE7DFB006FE11D /* MySDLApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySDLApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC7A0F7824AE7DFB006FE11D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FC7A0F7924AE7DFB006FE11D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FC7A0F8424AE7DFB006FE11D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC7A0F8724AE7DFB006FE11D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FC7A0F8924AE7DFB006FE11D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC7A0F8A24AE7DFB006FE11D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FC7A0F9124AE7F30006FE11D /* MySDLApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySDLApp_Prefix.pch; sourceTree = "<group>"; };
+		FC7A0F9224AE7FAC006FE11D /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = "../SDL/Xcode-iOS/SDL/SDL.xcodeproj"; sourceTree = "<group>"; };
+		FC7A0FAA24AE8078006FE11D /* ExtraCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraCategories.m; sourceTree = "<group>"; };
+		FC7A0FAB24AE8078006FE11D /* ExtraCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraCategories.h; sourceTree = "<group>"; };
+		FC7A0FAD24AE80BC006FE11D /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		FC7A0FAE24AE80BC006FE11D /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		FC7A0FB024AE80EA006FE11D /* SDLInterfaceBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLInterfaceBridge.h; sourceTree = "<group>"; };
+		FC7A0FB124AE80EA006FE11D /* SDLInterfaceBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLInterfaceBridge.m; sourceTree = "<group>"; };
+		FC7A0FB224AE80EA006FE11D /* RunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunViewController.m; sourceTree = "<group>"; };
+		FC7A0FB324AE80EB006FE11D /* RunViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunViewDelegate.h; sourceTree = "<group>"; };
+		FC7A0FB424AE80EB006FE11D /* RunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunViewController.h; sourceTree = "<group>"; };
+		FC7A0FBA24AE821D006FE11D /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		FC7A0FBB24AE821D006FE11D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FC7A0FBC24AE821D006FE11D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FC7A0FBD24AE821D006FE11D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		FC7A0FBE24AE821D006FE11D /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		FC7A0FBF24AE821D006FE11D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FC7A0FC024AE821D006FE11D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		FC7A0FC124AE821D006FE11D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FC7A0FCB24AE82A8006FE11D /* stroke.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = stroke.bmp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC7A0F7224AE7DFB006FE11D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC7A0FC424AE821D006FE11D /* CoreGraphics.framework in Frameworks */,
+				FC7A0FC624AE821E006FE11D /* CoreMotion.framework in Frameworks */,
+				FC7A0FC724AE821E006FE11D /* QuartzCore.framework in Frameworks */,
+				FC7A0FC224AE821D006FE11D /* GameController.framework in Frameworks */,
+				FC7A0FB924AE821D006FE11D /* libSDL2.a in Frameworks */,
+				FC7A0FC924AE821E006FE11D /* AudioToolbox.framework in Frameworks */,
+				FC7A0FC524AE821E006FE11D /* CoreAudio.framework in Frameworks */,
+				FC7A0FC824AE821E006FE11D /* Metal.framework in Frameworks */,
+				FC7A0FC324AE821D006FE11D /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC7A0F6C24AE7DFB006FE11D = {
+			isa = PBXGroup;
+			children = (
+				FC7A0F9224AE7FAC006FE11D /* SDL.xcodeproj */,
+				FC7A0F7724AE7DFB006FE11D /* MySDLApp */,
+				FC7A0F7624AE7DFB006FE11D /* Products */,
+				FC7A0FB824AE821D006FE11D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FC7A0F7624AE7DFB006FE11D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC7A0F7524AE7DFB006FE11D /* MySDLApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC7A0F7724AE7DFB006FE11D /* MySDLApp */ = {
+			isa = PBXGroup;
+			children = (
+				FC7A0FCA24AE82A8006FE11D /* Resources */,
+				FC7A0F7824AE7DFB006FE11D /* AppDelegate.h */,
+				FC7A0F7924AE7DFB006FE11D /* AppDelegate.m */,
+				FC7A0FAD24AE80BC006FE11D /* MainMenuViewController.h */,
+				FC7A0FAE24AE80BC006FE11D /* MainMenuViewController.m */,
+				FC7A0FAB24AE8078006FE11D /* ExtraCategories.h */,
+				FC7A0FAA24AE8078006FE11D /* ExtraCategories.m */,
+				FC7A0FB424AE80EB006FE11D /* RunViewController.h */,
+				FC7A0FB224AE80EA006FE11D /* RunViewController.m */,
+				FC7A0FB324AE80EB006FE11D /* RunViewDelegate.h */,
+				FC7A0FB024AE80EA006FE11D /* SDLInterfaceBridge.h */,
+				FC7A0FB124AE80EA006FE11D /* SDLInterfaceBridge.m */,
+				FC7A0F8424AE7DFB006FE11D /* Assets.xcassets */,
+				FC7A0F8624AE7DFB006FE11D /* LaunchScreen.storyboard */,
+				FC7A0F8924AE7DFB006FE11D /* Info.plist */,
+				FC7A0F8A24AE7DFB006FE11D /* main.m */,
+				FC7A0F9124AE7F30006FE11D /* MySDLApp_Prefix.pch */,
+			);
+			path = MySDLApp;
+			sourceTree = "<group>";
+		};
+		FC7A0F9324AE7FAC006FE11D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC7A0F9F24AE7FAC006FE11D /* libSDL2.a */,
+				FC7A0FA124AE7FAC006FE11D /* libSDL2.dylib */,
+				FC7A0FA324AE7FAC006FE11D /* libSDL2.a */,
+				FC7A0FA524AE7FAC006FE11D /* libSDL2.dylib */,
+				FC7A0FA724AE7FAC006FE11D /* libSDLmain.a */,
+				FC7A0FA924AE7FAC006FE11D /* libSDLmain.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC7A0FB824AE821D006FE11D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC7A0FC124AE821D006FE11D /* AudioToolbox.framework */,
+				FC7A0FBB24AE821D006FE11D /* AVFoundation.framework */,
+				FC7A0FBD24AE821D006FE11D /* CoreAudio.framework */,
+				FC7A0FBC24AE821D006FE11D /* CoreGraphics.framework */,
+				FC7A0FBE24AE821D006FE11D /* CoreMotion.framework */,
+				FC7A0FBA24AE821D006FE11D /* GameController.framework */,
+				FC7A0FC024AE821D006FE11D /* Metal.framework */,
+				FC7A0FBF24AE821D006FE11D /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC7A0FCA24AE82A8006FE11D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC7A0FCB24AE82A8006FE11D /* stroke.bmp */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC7A0F7424AE7DFB006FE11D /* MySDLApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC7A0F8E24AE7DFB006FE11D /* Build configuration list for PBXNativeTarget "MySDLApp" */;
+			buildPhases = (
+				FC7A0F7124AE7DFB006FE11D /* Sources */,
+				FC7A0F7224AE7DFB006FE11D /* Frameworks */,
+				FC7A0F7324AE7DFB006FE11D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MySDLApp;
+			productName = MySDLApp;
+			productReference = FC7A0F7524AE7DFB006FE11D /* MySDLApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC7A0F6D24AE7DFB006FE11D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = DonMag;
+				TargetAttributes = {
+					FC7A0F7424AE7DFB006FE11D = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = FC7A0F7024AE7DFB006FE11D /* Build configuration list for PBXProject "MySDLApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC7A0F6C24AE7DFB006FE11D;
+			productRefGroup = FC7A0F7624AE7DFB006FE11D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FC7A0F9324AE7FAC006FE11D /* Products */;
+					ProjectRef = FC7A0F9224AE7FAC006FE11D /* SDL.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				FC7A0F7424AE7DFB006FE11D /* MySDLApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FC7A0F9F24AE7FAC006FE11D /* libSDL2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.a;
+			remoteRef = FC7A0F9E24AE7FAC006FE11D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC7A0FA124AE7FAC006FE11D /* libSDL2.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.dylib;
+			remoteRef = FC7A0FA024AE7FAC006FE11D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC7A0FA324AE7FAC006FE11D /* libSDL2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.a;
+			remoteRef = FC7A0FA224AE7FAC006FE11D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC7A0FA524AE7FAC006FE11D /* libSDL2.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.dylib;
+			remoteRef = FC7A0FA424AE7FAC006FE11D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC7A0FA724AE7FAC006FE11D /* libSDLmain.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDLmain.a;
+			remoteRef = FC7A0FA624AE7FAC006FE11D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC7A0FA924AE7FAC006FE11D /* libSDLmain.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDLmain.a;
+			remoteRef = FC7A0FA824AE7FAC006FE11D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC7A0F7324AE7DFB006FE11D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC7A0FCC24AE82A8006FE11D /* stroke.bmp in Resources */,
+				FC7A0F8824AE7DFB006FE11D /* LaunchScreen.storyboard in Resources */,
+				FC7A0F8524AE7DFB006FE11D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC7A0F7124AE7DFB006FE11D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC7A0F7A24AE7DFB006FE11D /* AppDelegate.m in Sources */,
+				FC7A0FAC24AE8079006FE11D /* ExtraCategories.m in Sources */,
+				FC7A0FB624AE80EB006FE11D /* RunViewController.m in Sources */,
+				FC7A0F8B24AE7DFB006FE11D /* main.m in Sources */,
+				FC7A0FAF24AE80BC006FE11D /* MainMenuViewController.m in Sources */,
+				FC7A0FB524AE80EB006FE11D /* SDLInterfaceBridge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FC7A0F8624AE7DFB006FE11D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC7A0F8724AE7DFB006FE11D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC7A0F8C24AE7DFB006FE11D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FC7A0F8D24AE7DFB006FE11D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC7A0F8F24AE7DFB006FE11D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MySDLApp/MySDLApp_Prefix.pch;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../SDL/";
+				INFOPLIST_FILE = MySDLApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonMag.MySDLApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FC7A0F9024AE7DFB006FE11D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MySDLApp/MySDLApp_Prefix.pch;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../SDL/";
+				INFOPLIST_FILE = MySDLApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DonMag.MySDLApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC7A0F7024AE7DFB006FE11D /* Build configuration list for PBXProject "MySDLApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC7A0F8C24AE7DFB006FE11D /* Debug */,
+				FC7A0F8D24AE7DFB006FE11D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC7A0F8E24AE7DFB006FE11D /* Build configuration list for PBXNativeTarget "MySDLApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC7A0F8F24AE7DFB006FE11D /* Debug */,
+				FC7A0F9024AE7DFB006FE11D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC7A0F6D24AE7DFB006FE11D /* Project object */;
+}
