@@ -73,7 +73,6 @@
 }
 
 - (void)didTap:(id) sender {
-	NSLog(@"Tapped");
 
 	UIButton *b = (UIButton *)sender;
 	

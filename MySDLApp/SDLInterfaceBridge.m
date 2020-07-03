@@ -12,6 +12,9 @@ static UIViewController *callingController;
 #define BRUSH_SIZE 32           /* width and height of the brush */
 #define PIXELS_PER_ITERATION 5  /* number of pixels between brush blots when forming a line */
 
+#define BUTTON_WIDTH 120
+#define BUTTON_HEIGHT 50
+
 @interface SDLInterfaceBridge ()
 {
 	SDL_Window *window;
@@ -25,9 +28,14 @@ static UIViewController *callingController;
 
 	SDL_Rect topRect;
 	SDL_Rect drawingRect;
+	SDL_Rect doneRect;
+	SDL_Rect alertRect;
 
 	SDL_Texture *brush;       /* texture for the brush */
 	
+	SDL_Texture *doneButton;	/* texture for the Done button */
+	SDL_Texture *alertButton;	/* texture for the Alert button */
+
 	CGFloat width, height;
 	CGFloat screenScale;
 
@@ -112,17 +120,28 @@ static UIViewController *callingController;
 	SDL_RenderClear(renderer);
 
 	// draw white rect at top
-	SDL_Rect r = { 0, 0, windowW, 80 };
-	topRect = r;
-	SDL_Rect d = { 20, r.h + 20, windowW - 40, windowH - (r.h + 40) };
-	drawingRect = d;
-	
+//	SDL_Rect r = { 0, 0, windowW, 80 };
+//	topRect = r;
+//	SDL_Rect d = { 20, r.h + 20, windowW - 40, windowH - (r.h + 40) };
+//	drawingRect = d;
+//	SDL_Rect db = { windowW - (DONEBUTTON_WIDTH + 20), 20, DONEBUTTON_WIDTH, DONEBUTTON_HEIGHT };
+//	doneRect = db;
+
+	topRect		= (SDL_Rect){ 0, 0, windowW, 80 };
+	drawingRect	= (SDL_Rect){ 20, topRect.h + 20, windowW - 40, windowH - (topRect.h + 40) };
+	doneRect	= (SDL_Rect){ windowW - (BUTTON_WIDTH + 20), 20, BUTTON_WIDTH, BUTTON_HEIGHT };
+	alertRect	= (SDL_Rect){ 20, 20, BUTTON_WIDTH, BUTTON_HEIGHT };
+
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_RenderFillRect(renderer, &topRect);
 	
 	SDL_SetRenderDrawColor(renderer, 80, 80, 0, 255);
 	SDL_RenderFillRect(renderer, &drawingRect);
 	
+	[self initializeButtonTextures:renderer];
+	SDL_RenderCopy(renderer, alertButton, NULL, &alertRect);
+	SDL_RenderCopy(renderer, doneButton, NULL, &doneRect);
+
 	/* update screen */
 	SDL_RenderPresent(renderer);
 
@@ -145,8 +164,59 @@ static UIViewController *callingController;
 	}
 }
 
+- (void)testAlert {
+	
+	NSLog(@"test alert");
+	return;
+	
+	// this shows an alert view, but it does not respond to OK button tap
+
+	UIViewController *vc = [self findSDLViewController:window];
+	
+	UIAlertController *alertController = [UIAlertController
+										  alertControllerWithTitle:@"Testing"
+										  message:@"This is a test of the alert controller being displayed."
+										  preferredStyle:UIAlertControllerStyleAlert];
+	
+	[alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+		NSLog(@"Alert OK tapped.");
+	}]];
+	
+	[vc presentViewController:alertController animated:YES completion:nil];
+
+}
+
 - (int)randomIntBetween:(int)a and:(int)b {
 	return arc4random_uniform(b - a) + a;
+}
+
+- (void)initializeButtonTextures:(SDL_Renderer *)renderer
+{
+	SDL_Surface *bmp_surface;
+	bmp_surface = SDL_LoadBMP("doneButton.bmp");
+	if (bmp_surface == NULL) {
+		[NSException raise:@"Error" format:@"could not load doneButton.bmp"];
+	}
+	doneButton = SDL_CreateTextureFromSurface(renderer, bmp_surface);
+	SDL_FreeSurface(bmp_surface);
+	if (doneButton == 0) {
+		[NSException raise:@"Error" format:@"could not create doneButton texture"];
+	}
+	/* additive blending -- laying strokes on top of eachother makes them brighter */
+	SDL_SetTextureBlendMode(doneButton, SDL_BLENDMODE_NONE);
+
+	bmp_surface = SDL_LoadBMP("alertButton.bmp");
+	if (bmp_surface == NULL) {
+		[NSException raise:@"Error" format:@"could not load alertButton.bmp"];
+	}
+	alertButton = SDL_CreateTextureFromSurface(renderer, bmp_surface);
+	SDL_FreeSurface(bmp_surface);
+	if (alertButton == 0) {
+		[NSException raise:@"Error" format:@"could not create alertButton texture"];
+	}
+	/* additive blending -- laying strokes on top of eachother makes them brighter */
+	SDL_SetTextureBlendMode(alertButton, SDL_BLENDMODE_NONE);
+
 }
 
 - (void)showRects
@@ -161,31 +231,12 @@ static UIViewController *callingController;
 					break;
 				case SDL_FINGERUP:
 				{
-					CGFloat x = event.tfinger.x;
-					CGFloat y = event.tfinger.y;
-					CGFloat scX = (x / screenScale) * width;
-					CGFloat scY = (y / screenScale) * height;
-					if (scY < topRect.y + topRect.h) {
-						if (scX < 200.0) {
-							// this shows an alert view, but it does not respond to OK button tap
-							/*
-							UIViewController *vc = [self findSDLViewController:window];
-							NSLog(@"%@", vc);
-							
-							UIAlertController *alertController = [UIAlertController
-																  alertControllerWithTitle:@"Testing"
-																  message:@"This is a test of the alert controller being displayed."
-																  preferredStyle:UIAlertControllerStyleAlert];
-							
-							[alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-								NSLog(@"Alert OK tapped.");
-							}]];
-							
-							[vc presentViewController:alertController animated:YES completion:nil];
-							*/
-						} else {
-							done = 1;
-						}
+					state = SDL_GetMouseState(&x, &y);  /* get its location */
+					SDL_Rect tap = { x, y, 1, 1 };
+					if (SDL_HasIntersection(&(doneRect), &tap)) {
+						done = 1;
+					} else if (SDL_HasIntersection(&(alertRect), &tap)) {
+						[self testAlert];
 					}
 				}
 					break;
@@ -201,7 +252,7 @@ static UIViewController *callingController;
 {
 
 	/* load brush texture */
-	[self initializeTexture:renderer];
+	[self initializeBrushTexture:renderer];
 	
 	/* Enter render loop, waiting for user to quit */
 	done = 0;
@@ -210,42 +261,27 @@ static UIViewController *callingController;
 			case SDL_QUIT:
 				done = 1;
 				break;
+			case SDL_FINGERUP:
+			{
+				state = SDL_GetMouseState(&x, &y);  /* get its location */
+				SDL_Rect tap = { x, y, 1, 1 };
+				if (SDL_HasIntersection(&(doneRect), &tap)) {
+					done = 1;
+				} else if (SDL_HasIntersection(&(alertRect), &tap)) {
+					[self testAlert];
+				}
+			}
+				break;
 			case SDL_FINGERMOTION:
 			{
 				state = SDL_GetMouseState(&x, &y);  /* get its location */
 				SDL_GetRelativeMouseState(&dx, &dy);        /* find how much the mouse moved */
-				if (state & SDL_BUTTON_LMASK) {     /* is the mouse (touch) down? */
-					[self drawLine:renderer from:CGPointMake(x - dx, y - dy) to:CGPointMake(dx, dy)];
-					SDL_RenderPresent(renderer);
-				}
-			}
-				break;
-			case SDL_FINGERUP:
-			{
-				CGFloat x = event.tfinger.x;
-				CGFloat y = event.tfinger.y;
-				CGFloat scX = (x / screenScale) * width;
-				CGFloat scY = (y / screenScale) * height;
-				if (scY < topRect.y + topRect.h) {
-					if (scX < 200.0) {
-						// this shows an alert view, but it does not respond to OK button tap
-						/*
-						UIViewController *vc = [self findSDLViewController:window];
-						NSLog(@"%@", vc);
-						
-						UIAlertController *alertController = [UIAlertController
-															  alertControllerWithTitle:@"Testing"
-															  message:@"This is a test of the alert controller being displayed."
-															  preferredStyle:UIAlertControllerStyleAlert];
-						
-						[alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-							NSLog(@"Alert OK tapped.");
-						}]];
-						
-						[vc presentViewController:alertController animated:YES completion:nil];
-						*/
-					} else {
-						done = 1;
+				SDL_Rect tapS = { x, y, 1, 1 };
+				SDL_Rect tapE = { dx, dy, 1, 1 };
+				if (SDL_HasIntersection(&(drawingRect), &tapS) && SDL_HasIntersection(&(drawingRect), &tapS)) {
+					if (state & SDL_BUTTON_LMASK) {     /* is the mouse (touch) down? */
+						[self drawLine:renderer from:CGPointMake(x - dx, y - dy) to:CGPointMake(dx, dy)];
+						SDL_RenderPresent(renderer);
 					}
 				}
 			}
@@ -318,15 +354,14 @@ static UIViewController *callingController;
 	}
 }
 
-- (void)initializeTexture:(SDL_Renderer *)renderer
+- (void)initializeBrushTexture:(SDL_Renderer *)renderer
 {
 	SDL_Surface *bmp_surface;
 	bmp_surface = SDL_LoadBMP("stroke.bmp");
 	if (bmp_surface == NULL) {
 		[NSException raise:@"Error" format:@"could not load stroke.bmp"];
 	}
-	brush =
-	SDL_CreateTextureFromSurface(renderer, bmp_surface);
+	brush = SDL_CreateTextureFromSurface(renderer, bmp_surface);
 	SDL_FreeSurface(bmp_surface);
 	if (brush == 0) {
 		[NSException raise:@"Error" format:@"could not create brush texture"];

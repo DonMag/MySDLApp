@@ -25,6 +25,10 @@
 		FC7A0FC824AE821E006FE11D /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FC024AE821D006FE11D /* Metal.framework */; };
 		FC7A0FC924AE821E006FE11D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7A0FC124AE821D006FE11D /* AudioToolbox.framework */; };
 		FC7A0FCC24AE82A8006FE11D /* stroke.bmp in Resources */ = {isa = PBXBuildFile; fileRef = FC7A0FCB24AE82A8006FE11D /* stroke.bmp */; };
+		FC7A0FE124AF711B006FE11D /* doneButton.bmp in Resources */ = {isa = PBXBuildFile; fileRef = FC7A0FD624AF711A006FE11D /* doneButton.bmp */; };
+		FC7A0FE224AF711B006FE11D /* doneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7A0FE024AF711B006FE11D /* doneButton.png */; };
+		FC7A0FE524AF759D006FE11D /* alertButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7A0FE324AF759D006FE11D /* alertButton.png */; };
+		FC7A0FE624AF759D006FE11D /* alertButton.bmp in Resources */ = {isa = PBXBuildFile; fileRef = FC7A0FE424AF759D006FE11D /* alertButton.bmp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,10 @@
 		FC7A0FC024AE821D006FE11D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		FC7A0FC124AE821D006FE11D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FC7A0FCB24AE82A8006FE11D /* stroke.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = stroke.bmp; sourceTree = "<group>"; };
+		FC7A0FD624AF711A006FE11D /* doneButton.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = doneButton.bmp; sourceTree = "<group>"; };
+		FC7A0FE024AF711B006FE11D /* doneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doneButton.png; sourceTree = "<group>"; };
+		FC7A0FE324AF759D006FE11D /* alertButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alertButton.png; sourceTree = "<group>"; };
+		FC7A0FE424AF759D006FE11D /* alertButton.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = alertButton.bmp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +204,10 @@
 			isa = PBXGroup;
 			children = (
 				FC7A0FCB24AE82A8006FE11D /* stroke.bmp */,
+				FC7A0FD624AF711A006FE11D /* doneButton.bmp */,
+				FC7A0FE024AF711B006FE11D /* doneButton.png */,
+				FC7A0FE424AF759D006FE11D /* alertButton.bmp */,
+				FC7A0FE324AF759D006FE11D /* alertButton.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -308,8 +320,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7A0FE524AF759D006FE11D /* alertButton.png in Resources */,
 				FC7A0FCC24AE82A8006FE11D /* stroke.bmp in Resources */,
+				FC7A0FE624AF759D006FE11D /* alertButton.bmp in Resources */,
+				FC7A0FE124AF711B006FE11D /* doneButton.bmp in Resources */,
 				FC7A0F8824AE7DFB006FE11D /* LaunchScreen.storyboard in Resources */,
+				FC7A0FE224AF711B006FE11D /* doneButton.png in Resources */,
 				FC7A0F8524AE7DFB006FE11D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
